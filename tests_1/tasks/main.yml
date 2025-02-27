@@ -1,0 +1,7 @@
+- name: Copy files to server
+  copy:
+    src: "files/{{ item.src }}"
+    dest: "{{ item.dest | default('/default/path/') }}"
+  loop:
+    - { src: "file1.txt", dest: "/path/to/destination/file1.txt" }
+    - { src: "file2.txt", dest: "/path/to/destination/file2.txt" }
